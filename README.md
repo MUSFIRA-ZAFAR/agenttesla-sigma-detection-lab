@@ -1,4 +1,4 @@
-[![Malware Behavioral Analysis Sigma Rule Generation](https://capsule-render.vercel.app/api?type=waving&color=gradient&height=210&section=header&text=AgentTesla%20Behavioral%20Analysis%20%26%20Sigma%20Detection&fontSize=30&fontColor=ffffff&animation=fadeIn&fontAlignY=36&desc=Real%20Malware%20%E2%80%A2%20Real%20Telemetry%20%E2%80%A2%20Validated%20Detection%20Engineering&descAlignY=58&descSize=16)](#readme)
+[![Malware Behavioral Analysis and Sigma Rule Generation](https://capsule-render.vercel.app/api?type=waving&color=gradient&height=210&section=header&text=AgentTesla%20Behavioral%20Analysis&fontSize=38&fontColor=ffffff&animation=fadeIn&fontAlignY=36&desc=Real%20Malware%20-%20Real%20Telemetry%20-%20Validated%20Sigma%20Detection&descAlignY=58&descSize=16)](#readme)
 
 <p align="center">
   <img src="https://img.shields.io/badge/Malware-AgentTesla-E34F26?style=for-the-badge" alt="Malware Family"/>
