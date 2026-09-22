@@ -1,0 +1,50 @@
+title: Network Connection to Known AgentTesla C2 Domain (godforeu.com)
+id: 8f1a4b2c-77aa-4b11-9d21-a5c3f9e10002
+status: experimental
+description: >
+  Detects DNS resolution or outbound connection to godforeu.com, a domain
+  confirmed as an AgentTesla command-and-control server used for SMTP-based
+  data exfiltration. Observed during sandbox analysis (ANY.RUN task,
+  SHA256: 708e198608b5b463224c3fb77fcf708b845d0c7b5dbc6e9cab9e185c489be089).
+references:
+  - https://app.any.run/tasks/  # paste your exact task URL here
+author: <your name>
+date: 2026-09-18
+tags:
+  - attack.command-and-control
+  - attack.exfiltration
+  - attack.t1071.003
+logsource:
+  category: dns_query
+  product: windows
+detection:
+  selection:
+    QueryName|contains: 'godforeu.com'
+  condition: selection
+falsepositives:
+  - None expected - this is a dedicated malicious domain
+level: critical
+---
+title: Outbound Connection to AgentTesla C2 IP on SMTP Submission Port
+status: experimental
+description: >
+  Detects a network connection to the known AgentTesla C2 IP on port 587,
+  the SMTP submission port this malware abuses to exfiltrate stolen data
+  disguised as normal outbound email traffic.
+author: <your name>
+date: 2026-09-18
+tags:
+  - attack.command-and-control
+  - attack.t1071.003
+logsource:
+  category: network_connection
+  product: windows
+detection:
+  selection:
+    DestinationIp: '34.41.139.193'
+    DestinationPort: 587
+  condition: selection
+falsepositives:
+  - Rare - only relevant if this exact IP is not a legitimate mail relay
+    your organization uses
+level: high
